@@ -8,10 +8,12 @@ function App() {
   return (
       <div class="wrapper">
       <div class="container">
+      <main className="main">
         <NavMenu />
         <CenterBlock />
         <SideBar />
         <AudioPlayer />
+      </main>
       </div>
       </div>
   );
