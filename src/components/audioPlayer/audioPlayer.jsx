@@ -8,12 +8,41 @@ import PlayerLikeButton from '../../svg/playerLikeButton';
 import PlayerDislikeButton from '../../svg/playerDislikeButton';
 import PlayerIconNote from '../../svg/playerIconNote';
 import PlayerIconVolume from '../../svg/playerIconVolume';
+import { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
+function Box({ children }) {
+  return (
+    <div
+      style={{
+        display: 'block',
+        lineHeight: 1,
+        padding: '1rem',
+        marginBottom: '0.5rem',
+        width: 1000,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 function AudioPlayer() {
+
+  const [IsLoad, setIsLoad] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoad(true)
+    }, 3000)
+  })
+  
   return (
     <div className="bar">
           <div className="bar__content">
             <div className="bar__player-progress"></div>
+            {IsLoad === true ?
             <div className="bar__player-block">
               <div className="bar__player player">
                 <div className="player__controls">
@@ -91,6 +120,9 @@ function AudioPlayer() {
                 </div>
               </div>
             </div>
+            :
+                      <Skeleton wrapper={Box} count={1} />
+                      }
         </div>
     </div>
   );

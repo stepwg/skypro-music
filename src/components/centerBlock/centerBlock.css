@@ -1,0 +1,21 @@
+.PopUpMenu {
+    background-color: #313131;
+    position: absolute;
+    margin-top: 1rem;
+    width: 248px;
+    height: 305px;
+    margin-left: -1rem;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    padding-left: 1rem;
+}
+
+.PopUpMenu ul {
+    
+}
+
+.PopUpMenu ul li {
+    
+}
