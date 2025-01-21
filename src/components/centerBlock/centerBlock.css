@@ -10,12 +10,25 @@
     font-size: 20px;
     color: white;
     padding-left: 1rem;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
-.PopUpMenu ul {
-    
-}
+.PopUpMenu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    color: aliceblue;
+  }
 
-.PopUpMenu ul li {
-    
-}
+  .PopUpMenu a:hover {
+    color: blueviolet;
+    transform: translateX(5px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .PopUpMenu::-webkit-scrollbar {
+    width: 1px;
+  }

@@ -11,7 +11,7 @@ export const tracksList = [
     {
         trackIMG: <PlayerIconNote/>,
         trackName: 'Elektro',
-        trackAuthor: 'Dynoro, Outwork, Mr. Gee',
+        trackAuthor: ', OutwoDynorork, Mr. Gee',
         trackAlbom: 'Elektro',
         trackTime: '2:22',
     },

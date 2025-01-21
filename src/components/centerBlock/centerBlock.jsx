@@ -23,10 +23,26 @@ function Box({ children }) {
 
 function CenterBlock() {
 
-  const [IsOpen1, setIsOpen1] = useState(false);
-  const [IsOpen2, setIsOpen2] = useState(false);
-  const [IsOpen3, setIsOpen3] = useState(false);
+  const filterStates = {
+
+    CLOSED: "closed",
+    AUTHOR: "author",
+    GENRE: "genre",
+    YEAR: "year"
+    }
+
+  const [filter, setFilter] = useState(filterStates.CLOSED);
   const [IsLoad, setIsLoad] = useState(false);
+
+  
+
+    const toggleFilterState = (filterName) => {
+      setFilter(filter === filterName ? filterStates.CLOSED : filterName);
+    };
+
+  const isAuthor = filter === filterStates.AUTHOR;
+  const isGenter = filter === filterStates.GENRE;
+  const isYear = filter === filterStates.YEAR;
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,17 +50,6 @@ function CenterBlock() {
     }, 3000)
   })
 
-  const AuthorHandleClick = () => {
-    setIsOpen1(!IsOpen1);
-  }
-
-  const YearHandleClick = () => {
-    setIsOpen2(!IsOpen2);
-  }
-
-  const MusicHandleClick = () => {
-    setIsOpen3(!IsOpen3);
-  }
 
   return (
     <div className="main__centerblock centerblock">
@@ -62,38 +67,39 @@ function CenterBlock() {
             <h2 className="centerblock__h2">Треки</h2>
             <div className="centerblock__filter filter">
               <div className="filter__title">Искать по:</div>
-              <div className="filter__button button-author _btn-text" onClick={AuthorHandleClick}>
-                исполнителю
-                {IsOpen1 && (
-                <div className="PopUpMenu">
-                  <ul>
-                    <li>111111111111111</li>
-                    <li>22222</li>
-                    <li>3333333333</li>
-                  </ul>
-                </div>
-              )}
-              </div>
-              <div className="filter__button button-year _btn-text" onClick={YearHandleClick}>
+              <div className="filter__button button-author _btn-text" onClick={() => toggleFilterState(filterStates.AUTHOR)}>
+          исполнителю
+          {isAuthor && (
+            <div className="PopUpMenu">
+                <a href="#item1">Nero</a>
+                <a href="#item1">Dynoro, Outwork, Mr. Gee</a>
+                <a href="#item1">Ali Bakgor</a>
+                <a href="#item1">'Стоункат, Psychopath</a>
+                <a href="#item1">Jaded, Will Clarke, AR/CO</a>
+                <a href="#item1">Blue Foundation, Zeds Dead</a>
+                <a href="#item1">HYBIT, Mr. Black, Offer Nissim, Hi Profile</a>
+                <a href="#item1">minthaze</a>
+                <a href="#item1">3333333333</a>
+            </div>
+          )}
+        </div>
+              <div className="filter__button button-year _btn-text" onClick={() => toggleFilterState(filterStates.YEAR)}>
                 году выпуска
-                {IsOpen2 && (
+                {isYear && (
                 <div className="PopUpMenu">
-                  <ul>
-                    <li>4444444444444444</li>
-                    <li>555555555555555555</li>
-                    <li>666666666</li>
-                  </ul>
+                    <a href="#item1">1995</a>
+                    <a href="#item1">2000</a>
+                    <a href="#item1">2010</a>
+                    <a href="#item1">2020</a>
                 </div>
               )}
               </div>
-              <div className="filter__button button-genre _btn-text" onClick={MusicHandleClick}>жанру
-              {IsOpen3 && (
+              <div className="filter__button button-genre _btn-text" onClick={() => toggleFilterState(filterStates.GENRE)}>жанру
+              {isGenter && (
                 <div className="PopUpMenu">
-                  <ul>
-                    <li>777777777777777</li>
-                    <li>8888888</li>
-                    <li>9999999999</li>
-                  </ul>
+                    <a href="#item1">Рок</a>
+                    <a href="#item1">Поп</a>
+                    <a href="#item1">Реп</a>
                 </div>
               )}
               </div>
