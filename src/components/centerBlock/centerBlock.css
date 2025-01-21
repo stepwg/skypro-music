@@ -1,0 +1,34 @@
+.PopUpMenu {
+    background-color: #313131;
+    position: absolute;
+    margin-top: 1rem;
+    width: 248px;
+    height: 305px;
+    margin-left: -1rem;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    padding-left: 1rem;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.PopUpMenu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    color: aliceblue;
+  }
+
+  .PopUpMenu a:hover {
+    color: blueviolet;
+    transform: translateX(5px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .PopUpMenu::-webkit-scrollbar {
+    width: 1px;
+  }
